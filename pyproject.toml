@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ucnet"
+version = "0.1.0"
+description = "UCNet: Uncertainty-Calibrated Nets from scratch with pure NumPy autograd"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Mohammadreza Salehi", email = "mohammadrezasalehi88@gmail.com" }
+]
+license = "MIT"
+keywords = ["autograd", "deep-learning", "uncertainty-quantification", "deep-ensembles", "calibration"]
+dependencies = [
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.8.0",
+    "scikit-learn>=1.3.0",  # load_diabetes
+    "openpyxl>=3.1.0",      # UCI Energy (.xlsx)
+    "xlrd>=2.0.1",          # UCI Concrete (.xls)
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+    "torch>=2.2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]

@@ -1,0 +1,32 @@
+{
+  "experiment": "tabular",
+  "timestamp_utc": "2026-10-27T17:07:53+00:00",
+  "git_commit": "4212b9c292def0f731ed57db46986da2d7249aff",
+  "git_dirty": true,
+  "python": "3.12.3",
+  "platform": "Linux-7.0.0-113038-tuxedo-x86_64-with-glibc2.39",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "config": {
+    "seeds": [
+      42,
+      123,
+      456,
+      789,
+      1024
+    ],
+    "datasets": [
+      "diabetes",
+      "energy",
+      "concrete"
+    ],
+    "shifts": [
+      "in_distribution",
+      "extrapolation",
+      "noise_shift_0.5"
+    ],
+    "epochs": 100,
+    "patience": 15,
+    "ensemble_size": 5
+  }
+}
